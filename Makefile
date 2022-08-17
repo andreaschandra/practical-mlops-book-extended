@@ -14,10 +14,10 @@ install-amazon-linux:
 	pip install --upgrade pip &&\
 		pip install -r amazon-linux.txt
 lint:
-	pylint --disable=R,C hello.py
+	pylint --disable=R,C ./chapter1/hello.py
 
 format:
 	black *.py
 
 test:
-	python -m pytest -vv --cov=hello test_hello.py
+	python -m pytest -vv --cov=hello ./chapter1/test_hello.py
