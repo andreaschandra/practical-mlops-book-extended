@@ -16,7 +16,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: ./
-        file: ./Dockerfile
+        file: ./chapter4/packaging-containers/Dockerfile
         push: false
         tags: andreaschandra/flask-roberta:latest
 
