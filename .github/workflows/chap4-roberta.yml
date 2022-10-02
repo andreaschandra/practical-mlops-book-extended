@@ -12,18 +12,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: current directory
-    - run: |
-        pwd
-    - name: list files
-    - run: |
-        ls 
-
     - name: build flask-app container
       uses: docker/build-push-action@v2
       with:
         context: ./
-        file: ./Dockerfile
+        file: ./chapter4/packaging-containers/Dockerfile
         push: false
         tags: andreaschandra/flask-roberta:latest
 
