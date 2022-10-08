@@ -10,9 +10,12 @@ def main(args):
     if args.model_name.split('.')[-1] != 'onnx':
         raise ValueError("Model file name should have onnx extention .onnx, given", args.model_name)
 
-    model = onnx.load(args.model_name)
-    onnx.checker.check_model(model)
-    print(onnx.helper.printable_graph(model.graph))
+    try:
+        model = onnx.load(args.model_name)
+        onnx.checker.check_model(model)
+        print(onnx.helper.printable_graph(model.graph))
+    except:
+        raise ValueError("Error at loading and checking model, ")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='A command line tool to quickly verify ONNX models using onnx.check_model')
