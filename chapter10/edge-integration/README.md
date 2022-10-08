@@ -1,0 +1,3 @@
+- To exercise this part, please run `git clone https://github.com/microsoft/onnxruntime.git`
+- copy resnet.onnx from `torch-extended/`
+- Then run `python onnxruntime/tools/python/convert_onnx_models_to_ort.py  resnet18.onnx`
